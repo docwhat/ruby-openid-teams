@@ -1,7 +1,7 @@
 # Implements LaunchPad's OpenIDTeams specification
 # https://dev.launchpad.net/OpenIDTeams
 
-jequire 'openid/extensions/teams/version'
+require 'openid/extensions/teams/version'
 require 'openid/extension'
 require 'set'
 require 'openid/message'
@@ -9,9 +9,11 @@ require 'openid/message'
 module OpenID
   module Teams
     NS_URI = 'http://ns.launchpad.net/2007/openid-teams'
+    NS_ALIAS = 'lp'
 
     begin
-      Message.register_namespace_alias(NS_URI, 'teams')
+      # Register namespace for OpenID 1.x style requests
+      Message.register_namespace_alias(NS_URI, NS_ALIAS)
     rescue NamespaceAliasRegistrationError => e
       Util.log(e)
     end
@@ -20,7 +22,7 @@ module OpenID
       attr_accessor :ns_alias, :ns_uri, :teams
 
       def initialize teams
-        @ns_alias = 'teams'
+        @ns_alias = NS_ALIAS
         @ns_uri = NS_URI
         @teams = Array(teams)
       end
@@ -42,10 +44,10 @@ module OpenID
     end
 
     class Response < Extension
-      attr_accessor :ns_alias, :ns_uri
+      attr_accessor :ns_alias, :ns_uri, :teams
 
       def initialize teams
-        @ns_alias = 'teams'
+        @ns_alias = NS_ALIAS
         @ns_uri = NS_URI
         @teams = Array(teams)
       end
