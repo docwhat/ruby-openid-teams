@@ -1,6 +1,18 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'openid/extensions/teams'
 
+if ENV['TRAVIS'] == 'true'
+  require 'coveralls'
+  Coveralls.wear!
+else
+  begin
+    require 'simplecov'
+    SimpleCov.start
+  rescue LoadError
+    warn "Unable to load simplecov; skipping coverage report"
+  end
+end
+
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.filter_run :focus => true
