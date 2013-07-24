@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["docwhat@gerf.org"]
   spec.description   = %q{Support for the OpenIDTeams extension}
   spec.summary       = %q{Adds support for the OpenIDTeams extension (from LaunchPad.net) to ruby-openid}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/docwhat/ruby-openid-teams"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
