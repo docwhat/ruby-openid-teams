@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'openid/extensions/teams'
 require 'openid/message'
 require 'openid/server'
 

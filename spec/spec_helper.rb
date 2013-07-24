@@ -1,6 +1,3 @@
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'openid/extensions/teams'
-
 if ENV['TRAVIS'] == 'true'
   require 'coveralls'
   Coveralls.wear!
