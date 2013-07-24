@@ -1,6 +1,13 @@
-# Ruby::Openid::Teams
+# OpenID::Teams
 
-TODO: Write a gem description
+[![Build Status](https://secure.travis-ci.org/docwhat/ruby-openid-teams.png?branch=master)](http://travis-ci.org/docwhat/ruby-openid-teams)
+[![Dependencies](https://gemnasium.com/docwhat/ruby-openid-teams.png?branch=master)](https://gemnasium.com/docwhat/ruby-openid-teams)
+[![Coverage Status](https://coveralls.io/repos/docwhat/ruby-openid-teams/badge.png?branch=master)](https://coveralls.io/r/docwhat/ruby-openid-teams)
+
+This is an extension for [`ruby-openid`](https://rubygems.org/gems/ruby-openid) to add
+[OpenIDTeams](https://dev.launchpad.net/OpenIDTeams) support.
+
+This should work for both a consumer and provider.
 
 ## Installation
 
@@ -18,7 +25,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This works similar to other extensions, such as SREG and AX.
+
+Example code for a provider:
+
+```ruby
+teams_req = OpenID::Teams::Request.from_openid_request(oidreq)
+return if teams_req.nil?
+
+teams_data = ['team-a', 'team-b', 'team-c'] # Use your code to provide these strings.
+
+teams_resp = OpenID::Teams::Response.extract_response(teams_req, teams_data)
+oidresp.add_extension(teams_resp)
+```
 
 ## Contributing
 
