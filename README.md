@@ -1,13 +1,12 @@
 # OpenID::Teams
 
-[![Build Status](https://secure.travis-ci.org/docwhat/ruby-openid-teams.png?branch=master)](http://travis-ci.org/docwhat/ruby-openid-teams)
-[![Dependencies](https://gemnasium.com/docwhat/ruby-openid-teams.png?branch=master)](https://gemnasium.com/docwhat/ruby-openid-teams)
-[![Coverage Status](https://coveralls.io/repos/docwhat/ruby-openid-teams/badge.png?branch=master)](https://coveralls.io/r/docwhat/ruby-openid-teams)
+[![Build Status](https://travis-ci.org/docwhat/ruby-openid-teams.svg)](https://travis-ci.org/docwhat/ruby-openid-teams)
+[![Coverage Status](https://coveralls.io/repos/docwhat/ruby-openid-teams/badge.png)](https://coveralls.io/r/docwhat/ruby-openid-teams)
 
-This is an extension for [`ruby-openid`](https://rubygems.org/gems/ruby-openid) to add
+> This is an extension for [`ruby-openid`](https://rubygems.org/gems/ruby-openid) to add
 [OpenIDTeams](https://dev.launchpad.net/OpenIDTeams) support.
-
-This should work for both a consumer and provider.
+>
+> This should work for both a consumer and provider.
 
 ## Installation
 
